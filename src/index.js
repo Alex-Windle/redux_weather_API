@@ -4,9 +4,11 @@ import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 
 import App from './components/app';
-import reducers from './reducers';
+import reducers from './reducers/index.js';
+import ReduxPromise from 'redux-promise'; 
 
-const createStoreWithMiddleware = applyMiddleware()(createStore);
+// Hook middleware into the application
+const createStoreWithMiddleware = applyMiddleware(ReduxPromise)(createStore);
 
 ReactDOM.render(
   <Provider store={createStoreWithMiddleware(reducers)}>
