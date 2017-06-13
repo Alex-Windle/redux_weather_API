@@ -10,7 +10,7 @@ export default (props) => {
 	const total = props.data.reduce(function(acc, i) {
 		return acc + i; 
 	}, 0); 
-	const average = (total/length).toFixed(2); 
+	const average = (total/length).toFixed(0); 
 	
 	return (
 		<td>
@@ -18,7 +18,7 @@ export default (props) => {
 				<SparklinesLine color={props.color} />
 				<SparklinesReferenceLine type="avg" />
 			</Sparklines>
-			<div>{average} {props.unit}</div>
+			<div>{average}</div>
 		</td>		
 	); 
 }
