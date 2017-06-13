@@ -6,11 +6,20 @@ import { Sparklines, SparklinesLine } from 'react-sparklines';
 
 class WeatherList extends Component {
 	renderWeather(cityData) {
+		const temperatures = [
+			cityData.list[0].main.temp, 
+			cityData.list[7].main.temp, 
+			cityData.list[15].main.temp, 
+			ityData.list[23].main.temp, 
+			cityData.list[31].main.temp, 
+			cityData.list[39].main.temp
+		]; 
+		
 		return (
 			<tr key={cityData.city.id}>
 				<td>{cityData.city.name}</td>
 				<td>
-					<Sparklines data={[99, 95, 91, 99, 100]}>
+					<Sparklines data={[...temperatures]}>
 						<SparklinesLine color="orange" />
 					</Sparklines>
 				</td>
