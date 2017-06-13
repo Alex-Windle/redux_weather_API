@@ -14,11 +14,11 @@ export default (props) => {
 	
 	return (
 		<td>
-			<Sparklines data={props.data}>
+			<Sparklines data={props.data} height={100} width={180}>
 				<SparklinesLine color={props.color} />
 				<SparklinesReferenceLine type="avg" />
 			</Sparklines>
-			<div>{average}</div>
+			<div>{average} {props.unit}</div>
 		</td>		
 	); 
 }
