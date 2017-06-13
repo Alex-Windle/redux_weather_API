@@ -9,7 +9,7 @@ export default (props) => {
 		<td>
 			<Sparklines data={props.data}>
 				<SparklinesLine color={props.color} />
-				<SparklinesReferenceLine type="mean" />
+				<SparklinesReferenceLine type="avg" />
 			</Sparklines>
 		</td>		
 	); 
