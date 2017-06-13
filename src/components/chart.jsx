@@ -4,27 +4,12 @@
 import React from 'react'; 
 import { Sparklines, SparklinesLine } from 'react-sparklines';
 
-const Chart = (props) => {
+export default (props) => {
 	return (
-			<tr key={props.key}>
-				<td>{props.city}</td>
-				<td>
-					<Sparklines data={[...props.temps]}>
-						<SparklinesLine color="orange" />
-					</Sparklines>
-				</td>
-				<td>
-					<Sparklines data={[...props.pressure]}>
-						<SparklinesLine color="red" />
-					</Sparklines>
-				</td>
-				<td>
-					<Sparklines data={[...props.humidity]}>
-						<SparklinesLine color="blue" />
-					</Sparklines>
-				</td>
-			</tr>
+		<td>
+			<Sparklines data={props.data}>
+				<SparklinesLine color={props.color} />
+			</Sparklines>
+		</td>		
 	); 
 }
-
-export default Chart;
