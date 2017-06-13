@@ -5,12 +5,19 @@ import React from 'react';
 import { Sparklines, SparklinesLine, SparklinesReferenceLine } from 'react-sparklines';
 
 export default (props) => {
+	const length = props.data.length; 
+	const total = props.data.reduce(function(acc, i) {
+		return acc + i; 
+	}, 0); 
+	const average = (total/length).toFixed(2); 
+	
 	return (
 		<td>
 			<Sparklines data={props.data}>
 				<SparklinesLine color={props.color} />
 				<SparklinesReferenceLine type="avg" />
 			</Sparklines>
+			<div>Average: {average}</div>
 		</td>		
 	); 
 }
